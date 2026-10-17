@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AFM Signature — Compact Study</title>
+  <style>
+    .gm-title-3d {
+      color: #d4af37;
+      text-shadow: none;
+      position: relative;
+      background: linear-gradient(110deg, #b8860b 0%, #d4af37 28%, #fff4bf 48%, #d4af37 68%, #b8860b 100%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gmGoldShimmer 3.8s ease-in-out infinite;
+    }
+    .gm-title-3d::after {
+      content: none;
+    }
+    @keyframes gmGoldShimmer {
+      0%, 100% { background-position: 120% 0; }
+      50% { background-position: -20% 0; }
+    }
+    .certification-heading {
+      color: #d4af37;
+      font-size: 6.5px !important;
+      background: linear-gradient(110deg, #b8860b 0%, #d4af37 28%, #fff4bf 48%, #d4af37 68%, #b8860b 100%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gmGoldShimmer 3.8s ease-in-out infinite;
+    }
+    .iso-badge {
+      box-shadow: 0 2px 0 rgba(6,27,66,0.18), 0 3px 7px rgba(6,27,66,0.12), inset 0 1px 0 rgba(255,255,255,0.9);
+      transform: translateY(-1px);
+    }
+    img[alt="AFM Logo"] {
+      content: url("assets/5d14f45ed5_afm-logo.png");
+      width: 76px !important;
+      position: relative;
+      top: 6px;
+    }
+    .social-3d {
+      border: 1px solid rgba(255,255,255,0.72) !important;
+      box-shadow: 0 2px 0 rgba(1,8,22,0.7), 0 4px 7px rgba(1,8,22,0.38), inset 0 1px 1px rgba(255,255,255,0.45) !important;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.45);
+      transform: perspective(180px) rotateX(4deg) translateZ(0);
+    }
+    div[style*="width: 116px"][style*="height: 116px"] {
+      border-radius: 50% !important;
+      border-color: #b8860b !important;
+      box-shadow: 0 0 0 1px #f4d77a, 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 1px rgba(255,244,191,0.8) !important;
+    }
+
+    .cert-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #d4af37;
+      box-shadow: 0 0 0 1px rgba(184,134,11,0.35), 0 1px 3px rgba(6,27,66,0.3);
+    }
+
+    /* Calm, perfectly readable continuous slide for all 20 subsystems */
+    @keyframes calmSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .slider-track {
+      display: flex;
+      width: max-content;
+      animation: calmSlide 75s linear infinite;
+    }
+    .subsystems-stage {
+      position: relative;
+    }
+    .subsystems-stage > .slider-track {
+      position: relative;
+      z-index: 1;
+    }
+    .subsystems-stage .card-3d {
+      background: linear-gradient(145deg, rgba(6,27,66,0.96) 0%, rgba(3,11,28,0.94) 100%) !important;
+      border-color: rgba(212,175,55,0.86) !important;
+      position: relative;
+      transform: perspective(520px) rotateX(1deg) translateZ(0);
+      box-shadow: 0 7px 0 rgba(1,8,22,0.72), 0 8px 18px rgba(0,0,0,0.55), 0 0 16px rgba(29,78,216,0.18), inset 0 1px 1px rgba(255,255,255,0.18) !important;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.16), 0 2px 2px rgba(0,0,0,0.72);
+    }
+    .subsystems-stage .card-3d > div:first-child {
+      width: 36px !important;
+      height: 36px !important;
+      background-color: #061b42 !important;
+      background-image: url("assets/4c8f85d55a_afm_3d_subsystem_icons.png") !important;
+      background-size: 200% 200% !important;
+      background-position: 0% 0% !important;
+      background-repeat: no-repeat !important;
+      border-color: #d4af37 !important;
+      box-shadow: 0 4px 0 rgba(1,8,22,0.8), 0 4px 10px rgba(0,0,0,0.68), inset 2px 2px 4px rgba(255,255,255,0.24), inset -3px -3px 5px rgba(0,0,0,0.38) !important;
+      transform: translateZ(10px);
+    }
+    .subsystems-stage .card-3d:nth-child(4n+2) > div:first-child { background-position: 100% 0% !important; }
+    .subsystems-stage .card-3d:nth-child(4n+3) > div:first-child { background-position: 0% 100% !important; }
+    .subsystems-stage .card-3d:nth-child(4n+4) > div:first-child { background-position: 100% 100% !important; }
+    .subsystems-stage .card-3d:nth-child(20n+1) > div:first-child { background-image: url("assets/7072a0f0fc_project-phase.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+2) > div:first-child { background-image: url("assets/3796509cc2_checkpoint-control.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+3) > div:first-child { background-image: url("assets/d794502315_factory-capacity.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+4) > div:first-child { background-image: url("assets/827db252c8_material-tracker.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+5) > div:first-child { background-image: url("assets/d09c790e85_do-control.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+6) > div:first-child { background-image: url("assets/7405e75116_material-return.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+7) > div:first-child { background-image: url("assets/faeb7d6dec_ipv-installation.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+8) > div:first-child { background-image: url("assets/f42e42945f_production-schedule.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+9) > div:first-child { background-image: url("assets/3faedb7fa0_cash-credit.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+10) > div:first-child { background-image: url("assets/121bd81721_operational-gate.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+11) > div:first-child { background-image: url("assets/5d2c0aab35_daily-execution.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+12) > div:first-child { background-image: url("assets/fca60b9eca_weekly-meeting.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+13) > div:first-child { background-image: url("assets/2f241bdf3e_hr-admin.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+14) > div:first-child { background-image: url("assets/8627009dc0_product-quality.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+15) > div:first-child { background-image: url("assets/ae1ed3fa42_project-profit.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+16) > div:first-child { background-image: url("assets/fa7853e071_team-intelligence.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+17) > div:first-child { background-image: url("assets/70f8b22d95_dpr-system.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+18) > div:first-child { background-image: url("assets/6379ad6709_access-control.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+19) > div:first-child { background-image: url("assets/fc4ff432d3_vehicle-intel.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d:nth-child(20n+20) > div:first-child { background-image: url("assets/b76ee2b584_chatgpt-plugin.png") !important; background-size: cover !important; background-position: center !important; }
+    .subsystems-stage .card-3d > div:first-child svg {
+      display: none;
+    }
+    .subsystems-stage .card-3d > div:last-child {
+      position: relative;
+    }
+    .subsystems-stage .card-3d > div:last-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 8px;
+      bottom: -3px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,0.92), transparent);
+      animation: cardLightSweep 3.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes cardLightSweep {
+      0%, 100% { opacity: 0.18; transform: scaleX(0.35); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+    .subsystems-stage .card-3d span:first-child {
+      filter: none;
+      background: none;
+      -webkit-text-fill-color: #ffffff !important;
+      color: #ffffff !important;
+      text-shadow: none;
+      -webkit-text-stroke: 0;
+    }
+    .subsystems-stage .card-3d span:last-child {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .slider-track,
+      .subsystems-stage .card-3d > div:last-child::after { animation: none; }
+    }
+    .slider-track:hover {
+      animation-play-state: paused;
+    }
+    .card-3d:hover {
+      border-color: #d4af37 !important;
+      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.25) !important;
+    }
+  </style>
+<style>
+/* Compact study: preserve text sizes and the approved portrait/branding. */
+.compact-signature td[style*="padding: 18px 10px"]{padding:12px 10px !important;}
+.compact-signature td[style*="padding: 14px 12px 14px 16px"]{padding:9px 12px 9px 16px !important;}
+.compact-signature div[style*="padding: 12px 20px 10px 20px"]{padding:7px 20px 6px !important;}
+.compact-signature .subsystems-stage{padding-top:5px !important;padding-bottom:5px !important;}
+.compact-signature .card-3d{padding-top:5px !important;padding-bottom:5px !important;}
+</style></head>
+<body style="margin: 0; padding: 35px 15px; background-color: #030712; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+
+  <!-- MASTER CONTAINER (Standard 680px Premium Corporate Width) -->
+  <table class="compact-signature" role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; max-width: 680px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 45px rgba(0,0,0,0.6); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    
+    <!-- ================= ROW 1: TOP IDENTITY + CONTACTS + CERTIFICATIONS + SOCIALS ================= -->
+    <tr>
+      <td style="padding: 0; background-color: #ffffff;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            
+            <!-- 1. LEFT ARCH: PERFECTLY CENTERED THANZIL SALAM PORTRAIT (LAPTOP CLEARLY VISIBLE) -->
+            <td width="150" valign="middle" align="center" style="background: radial-gradient(circle at 30% 50%, #061b42 0%, #030b1c 100%); padding: 18px 10px; border-top-left-radius: 12px;">
+              <div style="background: #0b1e38; width: 116px; height: 116px; border-radius: 50%; border: 2.5px solid #d4af37; box-shadow: 0 6px 18px rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; overflow: hidden; margin: 0 auto;">
+                <img class="member-portrait" src="assets/0416796d05_thanzil_executive_premium.png" alt="Thanzil Salam" style="width:116px;height:116px;object-fit:cover;object-position:center 28%;border-radius:50%;display:block;transform:scale(1.65);transform-origin:80% 28%;">
+              </div>
+            </td>
+
+            <!-- 2. EXECUTIVE PERSONAL & CONTACT DETAILS (UNIFORM EXECUTIVE PALETTE) -->
+            <td valign="middle" style="padding: 14px 12px 14px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-size: 20px; font-weight: 900; color: #0b1e38; letter-spacing: 0.8px; line-height: 1.1; text-transform: uppercase;">
+                    THANZIL SALAM
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-size: 11px; font-weight: 800; color: #d4af37; letter-spacing: 2px; text-transform: uppercase; padding-top: 3px; padding-bottom: 5px;">
+                    GENERAL MANAGER
+                  </td>
+                </tr>
+                <!-- Clean 1-Line Company Alignment -->
+                <tr>
+                  <td style="font-size: 11.5px; font-weight: 700; color: #1e293b; padding-bottom: 8px; white-space: nowrap;">
+                    Al Farid Metal Works Manufacturing LLC
+                  </td>
+                </tr>
+                <!-- Contact rows with uniform professional colors -->
+                <tr>
+                  <td>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size: 10.5px; color: #334155; line-height: 18px;">
+                      <tr>
+                        <td width="16" style="padding-right: 6px;">
+                          <div style="background-color: #0b1e38; border-radius: 3px; width: 15px; height: 15px; text-align: center; line-height: 15px; color: #d4af37; font-size: 8px;">📞</div>
+                        </td>
+                        <td>
+                          <a href="tel:+971526405312" style="color: #0b1e38; text-decoration: none; font-weight: 700;">+971 52 640 5312</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="16" style="padding-right: 6px;">
+                          <div style="background-color: #0b1e38; border-radius: 3px; width: 15px; height: 15px; text-align: center; line-height: 15px; color: #d4af37; font-size: 8px;">☎</div>
+                        </td>
+                        <td>
+                          <a href="tel:+97167480472" style="color: #334155; text-decoration: none; font-weight: 600;">+971 6 748 0472</a>
+                          <span style="color: #d4af37; font-weight: bold; margin: 0 4px;">|</span>
+                          <span style="color: #334155; font-weight: 600;">Ext 104</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="16" style="padding-right: 6px;">
+                          <div style="background-color: #0b1e38; border-radius: 3px; width: 15px; height: 15px; text-align: center; line-height: 15px; color: #d4af37; font-size: 8px;">✉</div>
+                        </td>
+                        <td>
+                          <a href="mailto:thanzil@alfariduae.com" style="color:#0b1e38;text-decoration:none;font-weight:600">thanzil@alfariduae.com</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="16" style="padding-right: 6px;">
+                          <div style="background-color: #0b1e38; border-radius: 3px; width: 15px; height: 15px; text-align: center; line-height: 15px; color: #d4af37; font-size: 8px;">🌐</div>
+                        </td>
+                        <td>
+                          <a href="https://www.alfariduae.com" target="_blank" style="color: #0b1e38; text-decoration: none; font-weight: 600;">www.alfariduae.com</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="16" style="padding-right: 6px;">
+                          <div style="background-color: #0b1e38; border-radius: 3px; width: 15px; height: 15px; text-align: center; line-height: 15px; color: #d4af37; font-size: 8px;">📍</div>
+                        </td>
+                        <td>
+                          <a href="https://maps.app.goo.gl/puQhCXt1qLKR9Xhb9" target="_blank" style="color: #475569; text-decoration: none;">Ajman &ndash; United Arab Emirates</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <!-- 3. TOP RIGHT: PROMINENT AFM LOGO + OUR CERTIFICATIONS + EXACT SHARP ISO BADGES -->
+            <td width="265" valign="middle" align="center" style="border-left: 1px solid #e2e8f0; padding: 10px 12px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                <!-- AFM Logo (Enlarged for Prominence) -->
+                <tr>
+                  <td align="center" style="padding-bottom: 2px;">
+                    <img src="assets/embedded_aecbfa404a50aefc.jpg" alt="AFM Logo" width="68" style="display: block; width: 68px; height: auto;">
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-bottom: 6px;">
+                    <span class="certification-heading" style="font-size: 7.5px; font-weight: 700; color: #d4af37; letter-spacing: 0.6px; text-transform: uppercase;">
+                      The Complete Solution for Kitchen
+                    </span>
+                  </td>
+                </tr>
+                <!-- "OUR CERTIFICATIONS" Header with clean Gold lines -->
+                <tr>
+                  <td align="center" style="padding-bottom: 6px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="85%" align="center">
+                      <tr>
+                        <td class="cert-dot" width="24" height="7" style="background: none; box-shadow: none; color: #d4af37; font-size: 8px; letter-spacing: 1px; line-height: 7px; white-space: nowrap;">• • •</td>
+                        <td width="115" align="center" style="font-size: 8px; font-weight: 800; color: #061b42; letter-spacing: 1px; text-transform: uppercase; padding: 0 4px; white-space: nowrap;">
+                          OUR CERTIFICATIONS
+                        </td>
+                        <td class="cert-dot" width="24" height="7" style="background: none; box-shadow: none; color: #d4af37; font-size: 8px; letter-spacing: 1px; line-height: 7px; white-space: nowrap;">• • •</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- 3 Sharp ISO Logos (Real Badge Layout) -->
+                <tr>
+                  <td align="center">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                      <tr>
+                        <!-- ISO 9001 -->
+                        <td align="center" style="padding: 0 4px;">
+                          <div class="iso-badge" style="border: 1px solid #dbeafe; border-radius: 4px; padding: 2px 4px; background: #ffffff;">
+                            <span style="font-size: 9px; font-weight: 900; color: #1e3a8a; display: block; line-height: 1;">ISO</span>
+                            <span style="font-size: 6.5px; font-weight: 800; color: #1e3a8a; display: block;">9001:2015</span>
+                            <span style="font-size: 5px; color: #1e3a8a; display: block; text-transform: uppercase;">QUALITY</span>
+                          </div>
+                        </td>
+                        <!-- ISO 14001 -->
+                        <td align="center" style="padding: 0 4px;">
+                          <div class="iso-badge" style="border: 1px solid #dcfce7; border-radius: 4px; padding: 2px 4px; background: #ffffff;">
+                            <span style="font-size: 9px; font-weight: 900; color: #15803d; display: block; line-height: 1;">ISO</span>
+                            <span style="font-size: 6.5px; font-weight: 800; color: #15803d; display: block;">14001:2015</span>
+                            <span style="font-size: 5px; color: #15803d; display: block; text-transform: uppercase;">ENVIRONMENT</span>
+                          </div>
+                        </td>
+                        <!-- ISO 45001 -->
+                        <td align="center" style="padding: 0 4px;">
+                          <div class="iso-badge" style="border: 1px solid #fee2e2; border-radius: 4px; padding: 2px 4px; background: #ffffff;">
+                            <span style="font-size: 9px; font-weight: 900; color: #b91c1c; display: block; line-height: 1;">ISO</span>
+                            <span style="font-size: 6.5px; font-weight: 800; color: #b91c1c; display: block;">45001:2018</span>
+                            <span style="font-size: 5px; color: #b91c1c; display: block; text-transform: uppercase;">SAFETY</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- ASCB Badge Row -->
+                <tr>
+                  <td align="center" style="padding-top: 6px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                      <tr>
+                        <td valign="middle" style="padding-right: 6px;">
+                          <div style="background: #1e293b; border-radius: 3px; padding: 2px 5px; color: #ffffff; font-size: 7px; font-weight: 800;">ASCB</div>
+                        </td>
+                        <td valign="middle" align="left">
+                          <span style="font-size: 7.5px; font-weight: 800; color: #0f172a; display: block; line-height: 1.1;">Accredited by ASCB</span>
+                          <span style="font-size: 6px; color: #64748b; display: block;">(Accreditation Services Worldwide)</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <!-- 4. RIGHT VERTICAL SOCIAL PILL (OFFICIAL COLORFUL ICONS) -->
+            <td width="42" valign="middle" align="center" style="background-color: #061b42; padding: 10px 0; border-top-right-radius: 12px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                <!-- Facebook -->
+                <tr>
+                  <td align="center" style="padding: 2.5px 0;">
+                    <a class="social-3d" href="https://www.facebook.com/alfariduae" target="_blank" style="text-decoration: none; display: block; width: 22px; height: 22px; border-radius: 50%; background-color: #1877f2; text-align: center; line-height: 22px; color: #ffffff; font-size: 10px; font-weight: bold;">f</a>
+                  </td>
+                </tr>
+                <!-- Official Instagram Icon -->
+                <tr>
+                  <td align="center" style="padding: 2.5px 0;">
+                    <a class="social-3d" href="https://www.instagram.com/afm_kitchen_equipments/" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                  </td>
+                </tr>
+                <!-- LinkedIn -->
+                <tr>
+                  <td align="center" style="padding: 2.5px 0;">
+                    <a class="social-3d" href="https://www.linkedin.com/company/al-farid-metal-works-manuf-llc/" target="_blank" style="text-decoration: none; display: block; width: 22px; height: 22px; border-radius: 50%; background-color: #0a66c2; text-align: center; line-height: 22px; color: #ffffff; font-size: 9px; font-weight: bold;">in</a>
+                  </td>
+                </tr>
+                <!-- Official Google Maps Icon -->
+                <tr>
+                  <td align="center" style="padding: 2.5px 0;">
+                    <a class="social-3d" href="https://maps.app.goo.gl/puQhCXt1qLKR9Xhb9" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+                      <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle fill="#FFFFFF" cx="12" cy="9" r="2.8"/></svg>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= ROW 2: SUSTAINABILITY & 4 VALUES STRIP ================= -->
+    <tr>
+      <td style="padding: 6px 16px; background-color: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td valign="middle" style="padding-right: 12px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="18" valign="middle">
+                    <span style="font-size: 12px;">🌱</span>
+                  </td>
+                  <td style="font-size: 8px; color: #15803d; line-height: 11px; font-weight: 600;">
+                    <strong>Please consider your environmental responsibility.</strong><br>
+                    <span style="color: #475569; font-weight: 500;">Before printing this e-mail message, ask yourself whether you really need a hard copy.</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td width="1" style="background-color: #cbd5e1;"></td>
+            <!-- 4 Corporate Values -->
+            <td valign="middle" align="right" style="padding-left: 12px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="padding: 0 6px;">
+                    <div style="font-size: 7.5px; font-weight: 800; color: #061b42; text-transform: uppercase;">QUALITY</div>
+                    <div style="font-size: 6.5px; color: #64748b; text-transform: uppercase;">PRODUCTS</div>
+                  </td>
+                  <td align="center" style="padding: 0 6px;">
+                    <div style="font-size: 7.5px; font-weight: 800; color: #061b42; text-transform: uppercase;">CUSTOMER</div>
+                    <div style="font-size: 6.5px; color: #64748b; text-transform: uppercase;">FOCUSED</div>
+                  </td>
+                  <td align="center" style="padding: 0 6px;">
+                    <div style="font-size: 7.5px; font-weight: 800; color: #061b42; text-transform: uppercase;">INTEGRITY &amp;</div>
+                    <div style="font-size: 6.5px; color: #64748b; text-transform: uppercase;">RELIABILITY</div>
+                  </td>
+                  <td align="center" style="padding: 0 6px;">
+                    <div style="font-size: 7.5px; font-weight: 800; color: #061b42; text-transform: uppercase;">COMMITTED</div>
+                    <div style="font-size: 6.5px; color: #64748b; text-transform: uppercase;">TEAMWORK</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= ROW 3: WATERMARK SYSTEM HEADER (100% CLICKABLE) + 20 SUBSYSTEMS 3D SLIDER ================= -->
+    <tr>
+      <td style="padding: 0; background-color: #05132d; border-top: 1.5px solid #d4af37; border-bottom: 1.5px solid #d4af37;">
+        
+        <!-- ENTIRE SYSTEM HEADER AS CLICKABLE ACCESS TO SYSTEM WEBSITE -->
+        <a href="https://www.afmaisystem.com" target="_blank" style="text-decoration: none; display: block;">
+          <div style="padding: 12px 20px 10px 20px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); background: #07193d; position: relative; overflow: hidden; cursor: pointer;">
+            <!-- Low Opacity Circuit Emblem Watermark in Background -->
+            <div style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none;">
+              <img src="assets/embedded_1f1b146ac35defb6.png" alt="" width="95" height="95" style="display: block;">
+            </div>
+            
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+                <td align="center">
+                  <span style="font-size: 13.5px; font-weight: 900; color: #ffffff; letter-spacing: 1.2px; text-transform: uppercase; display: block; line-height: 1.2;">
+                    AFM &ndash; <span style="color: #d4af37;">T | S</span> &ndash; AI-Enabled Future Operating System
+                  </span>
+                  <span class="gm-title-3d" style="font-size: 9.5px; color: #d4af37; display: block; font-weight: 600; padding-top: 3px; letter-spacing: 0.8px;">
+                    Your clarity will design your future
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </a>
+
+        <!-- INTEGRATED SUBSYSTEMS BAR LABEL -->
+        <div style="background-color: #030b1c; padding: 4px 0; text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
+          <span style="font-size: 8px; font-weight: 800; color: #d4af37; letter-spacing: 1.8px; text-transform: uppercase;">
+            &bull; AFM &ndash; T | S | INTEGRATED SUBSYSTEMS &bull;
+          </span>
+        </div>
+
+        <!-- 20 INTEGRATED SUBSYSTEMS 3D CALM ANIMATED SLIDING TRACK -->
+        <div class="subsystems-stage" style="overflow: hidden; padding: 9px 0; width: 100%; max-width: 680px;">
+          <div class="slider-track" style="gap: 10px; padding-left: 8px;">
+            
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Project Phase Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Lifecycle & Stage Governance</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Checkpoint Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">CP1 → CP30 Ownership Visibility</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Factory Capacity</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Real-Time Fabrication Loading</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Material Tracker Master</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Stock Control & Dual-Store Balance</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">DO Control System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Delivery Orders & Logistics Gate</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Material Return Approval</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Return Verification & Traceability</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">AFM – IPV System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Installation Pending Visibility</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Weekly Production Schedule</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Targeted Shopfloor Output</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Cash & Credit Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Receivables, Aging & Cashflow</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/><circle cx="14" cy="12" r="1"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Operational Gate</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Request Intake & Live Approvals</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Daily Site Execution</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Site Progress, Punchlist & Delivery</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Weekly Meeting & MOM</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Action Tracking & Closed-Loop SRS</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">HR & Admin Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Workforce Allocation & Records</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Product Quality 360</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Zero-Defect Inspection Gates</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Project Profit Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Cost vs Margin Governance</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Team Intelligence</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Operational Data & Analytics</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">DPR System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Daily Progress Reporting Logs</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Access Control System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Role-Based Security & Permissions</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="10" x="1" y="5" rx="1"/><polygon points="15 8 19 8 22 11 22 15 15 15 15 8"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">AI-DRIVE | Vehicle Intel</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Fleet Dispatch & GPS Tracking</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">ChatGPT Plugin System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Autonomous AI Agents & Execution</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Project Phase Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Lifecycle & Stage Governance</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Checkpoint Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">CP1 → CP30 Ownership Visibility</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Factory Capacity</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Real-Time Fabrication Loading</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Material Tracker Master</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Stock Control & Dual-Store Balance</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">DO Control System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Delivery Orders & Logistics Gate</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Material Return Approval</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Return Verification & Traceability</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">AFM – IPV System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Installation Pending Visibility</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Weekly Production Schedule</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Targeted Shopfloor Output</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Cash & Credit Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Receivables, Aging & Cashflow</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/><circle cx="14" cy="12" r="1"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Operational Gate</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Request Intake & Live Approvals</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Daily Site Execution</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Site Progress, Punchlist & Delivery</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Weekly Meeting & MOM</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Action Tracking & Closed-Loop SRS</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">HR & Admin Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Workforce Allocation & Records</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Product Quality 360</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Zero-Defect Inspection Gates</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Project Profit Control</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Cost vs Margin Governance</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Team Intelligence</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Operational Data & Analytics</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">DPR System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Daily Progress Reporting Logs</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">Access Control System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Role-Based Security & Permissions</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="10" x="1" y="5" rx="1"/><polygon points="15 8 19 8 22 11 22 15 15 15 15 8"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">AI-DRIVE | Vehicle Intel</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Fleet Dispatch & GPS Tracking</span>
+          </div>
+        </div>
+        
+        <div class="card-3d" style="background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(15,23,42,0.6) 100%); border: 1.2px solid rgba(212,175,55,0.35); border-radius: 8px; padding: 7px 14px; display: flex; align-items: center; gap: 10px; min-width: 180px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15); transition: transform 0.2s ease;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(212,175,55,0.7); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(6,27,66,0.4) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.5); flex-shrink: 0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div>
+            <span style="font-size: 8.5px; font-weight: 800; color: #ffffff; display: block; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.4px;">ChatGPT Plugin System</span>
+            <span style="font-size: 7px; color: #94a3b8; display: block; white-space: nowrap;">Autonomous AI Agents & Execution</span>
+          </div>
+        </div>
+        
+          </div>
+        </div>
+
+      </td>
+    </tr>
+
+    <!-- APPROVED VIDEO: ANIMATED GIF WITH VIDEO LINK -->
+    <tr><td style="padding:0;background:#071225;border-top:2px solid #d4af37;">
+      <a href="assets/1febd17524_afm_video_clean_v3.mp4" target="_blank" style="display:block;text-decoration:none;">
+        <img src="assets/9a351fc52d_afm_signature_panorama.gif" width="680" height="140" alt="Al Farid commercial kitchens and wine chillers — click to watch video" style="display:block;width:100%;max-width:680px;height:140px;object-fit:cover;border:0;">
+      </a>
+    </td></tr>
+    <!-- ================= ROW 4: CONFIDENTIALITY + REVISED TAGLINE ================= -->
+    <tr>
+      <td style="padding: 8px 16px 10px 16px; background: radial-gradient(circle at 70% 50%, #081e48 0%, #020712 100%); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td width="20" valign="top" style="padding-right: 6px;">
+              <div style="background: rgba(212,175,55,0.12); border: 1px solid #d4af37; border-radius: 50%; width: 17px; height: 17px; text-align: center; line-height: 16px; font-size: 9px;">
+                🔒
+              </div>
+            </td>
+            <td valign="top" style="font-size: 6.5px; color: #94a3b8; line-height: 9.5px; padding-right: 12px;">
+              This e-mail message may contain confidential or legally privileged information and is intended only for the use of the intended recipient(s). Any unauthorized disclosure, dissemination, distribution, copying or the taking of any action in reliance on the information herein is prohibited. Al Farid Metal Works Manufacturing LLC is not responsible for errors or omissions in this message.
+            </td>
+            <td width="1" style="background-color: rgba(212,175,55,0.3);"></td>
+            <td width="180" valign="middle" align="center" style="padding-left: 10px;">
+              <span style="font-size: 8px; font-weight: 900; color: #ffffff; letter-spacing: 0.6px; display: block; text-transform: uppercase; white-space: nowrap;">
+                PRECISION IN EVERY DETAIL
+              </span>
+              <div style="height: 1px; width: 40px; background-color: #d4af37; margin: 3px auto;"></div>
+              <span style="font-size: 8px; font-weight: 800; color: #d4af37; letter-spacing: 0.6px; display: block; text-transform: uppercase; white-space: nowrap;">
+                EXCELLENCE IN EVERY DELIVERY
+              </span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>
