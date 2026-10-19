@@ -1,9 +1,7 @@
 # AFM team signatures
 
-12 approved-layout local previews prepared for GitHub Pages. Assets use relative URLs within this directory.
+Final approved compact design for the 12 employees with existing supplied photos. Open email/index.html for installation and light variants. Existing employee URLs remain available. Shared animated showcase: nine scenes, 680 × 98 px, around 47 MB.
 
-## Pending before email use
+Five records await photos: Antony Hillan, Suresh Soundarajan, Mukesh Kumar, Sarun Babu, Ahmed.
 
-Browser CSS animations, SVG social icons, CSS background icons and content replacement are not reliable across email clients. The current pages are browser previews, not verified installable email signatures. Prepare inline-style, hosted-image email variants after hosting is established, then test the actual signature installation flow in Gmail and Outlook. The GIF is approximately 5.45 MB and may load slowly; some clients show only its first frame. Video links must resolve over HTTPS for recipients.
-
-Do not publish the source spreadsheet, recovery transcripts, original private files or build scripts.
+Browser layout and links are verified. Actual received-message testing in Gmail and Outlook remains pending. Generated showcase imagery is based on supplied product/site references and is not documentary site photography.
